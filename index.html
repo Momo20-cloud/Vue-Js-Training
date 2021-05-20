@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Js</title>
+    <!-- Import Styles -->
+<link rel="stylesheet" href="./style.css">
+
+  </head>
+  <body>
+    <br><hr>
+      <div id="counter">
+        counter : {{counter}}
+      </div>
+      <div id="bind-attribute">
+        <span v-bind:title="message">
+          Hover your mouse over me for a few seconds to see my dynamically bound
+    title!
+        </span>
+      </div><br><hr>
+
+      <div id="event-handling">
+        <p>{{messageInv}}</p>
+        <button @click="inverser">Renverser le Message</button>
+      </div><br><hr>
+
+      <div id="two-way-binding">
+        <p>{{form}}</p>
+        <input type="text" v-model="form">
+      </div><br><hr>
+
+      <div id="conditional-rendering">
+        <span v-if="seen">Maintenant tu me vois ! </span>
+        <button @click="faireDisparaitre">Faire disparaître</button>
+        <button @click="faireApparaitre">Faire Apparaître</button>
+      </div><br><hr>
+
+      <div id="demo">
+        <button @click="show = !show">Toggle</button>
+
+        <transition name="fade">
+        <p v-if)="show">Maintenant tu me vois ! </span></p>
+        </transition>
+      </div><br><hr>
+
+      <div id="momo">
+        <button @click= "show = !show">Toggle Render</button>
+
+        <transition name="slide-fade">
+          <p v-if="show">Coucou Sa va ! ?</p>
+        </transition>
+      </div><br><hr>
+
+      <div id="entering">
+        <button @click="show = !show">Toggle entering</button>
+          <transition name="bounce">
+        <p v-if="show">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae nam sed eligendi autem amet iure ea distinctio atque, ad aperiam vitae voluptates, iusto officiis vel magnam dolor. Perspiciatis, accusantium debitis?
+        </p>
+        </transition>
+      </div><br><hr>
+
+      <transition  @before-enter="beforeEnter"
+      @enter="enter"
+      @after-enter="afterEnter"
+      @enter-cancelled="enterCancelled"
+      @before-leave="beforeLeave"
+      @leave="leave"
+      @after-leave="afterLeave"
+      @leave-cancelled="leaveCancelled"
+      :css="false">
+
+      </transition>
+
+
+
+
+      <script src="https://unpkg.com/vue@next"></script>
+      <script src="./app.js"></script>
+      
+
+    </body>
+</html>

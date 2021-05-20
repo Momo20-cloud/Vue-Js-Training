@@ -1,0 +1,47 @@
+body{
+    margin: 30px;
+}
+
+.fade-enter-active,
+.fade-leave-active{
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-form,
+.fade-leave-to{
+    opacity: 0;
+}
+
+.slide-fade-leave-active{
+    transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active{
+    transition: all 0.8s cubic-bezier(1.0,0.5,0.8,1.0);
+}
+
+.slide-fade-enter-form,
+.slide-fade-leave-to{
+
+transform: translateX(20px);
+opacity: 0;
+}
+
+.bounce-enter-active{
+    animation : momo 0.5s;
+}
+
+.bounce-leave-active{
+    animation: momo 0.5s reverse;
+}
+@keyframes momo {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
